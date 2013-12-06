@@ -33,8 +33,10 @@ After opening the ontology, you select the template that is be used to import pr
 
 <h2>3. Create the Ontology</h2>
 The next step is creating the ontology that stores the product information. Here the plug-in offers two ways:
-–	Create an ontology that is compatible with GoodRelations Vocabulary
-–	Create a custom ontology from scratch
+<ul>
+<li>Create an ontology that is compatible with GoodRelations Vocabulary</li>
+<li>Create a custom ontology from scratch</li>
+</ul>
 
 <h3>3.1. Create an Ontology that is Compatible with GoodRelations Vocabulary</h3>
 
