@@ -14,14 +14,14 @@ It is simple:
 <li>Save and Serialize the Ontology</li>
 </ol>
 
-<h2>Create a Template File</h2>
+<h2>1. Create a Template File</h2>
 Creating a template file is the basic step for using the IRIS plug-in. The information collected using the template is mapped to the attributes of the Product object. Title, brand, productID, description, and imgLink are single-valued attributes of the Product object whereas feature, includes, propertyName and propertyValue are multi-valued attributes. 
 
 A template has two parts; the first part contains the tree that specifies the paths of HTML tags around the product attribute names and product attribute values. The second part contains the information on how the HTML documents should be acquired.
 
 The product information is extracted using the tree in the first part of the template. The tree is created manually by the user therefore the user should analyze the HTML code of the Web page carefully. “amazon.com” pages that contain information about laptops are used as an example (amazon.txt). 
 
-<h2>Open the ontology and the Template</h2>
+<h2>2. Open the ontology and the Template</h2>
 The next step is opening an empty ontology to store the extracted information. IRIS is developed as a plug-in for Protégé Ontology Editor therefore the user opens an empty ontology in Protégé Editor preceding the following steps:
 <ol>
 <li>From the welcome dialog, select “Create New Project...” then “The Create New Project” wizard appears. Select “OWL/RDF Files” then in the next step select “OWL Files”.</li>
@@ -31,19 +31,19 @@ The next step is opening an empty ontology to store the extracted information. I
 
 After opening the ontology, you select the template that is be used to import product information from the Web. In my example, I choose the amazon.txt by clicking the “Open template” button. The “Properties Window” lists all properties of the individuals in “Individuals Window”. 
 
-<h2>Create the Ontology</h2>
+<h2>3. Create the Ontology</h2>
 The next step is creating the ontology that stores the product information. Here the plug-in offers two ways:
 –	Create an ontology that is compatible with GoodRelations Vocabulary
 –	Create a custom ontology from scratch
 
-<h3> Create an Ontology that is Compatible with GoodRelations Vocabulary</h3>
+<h3>3.1. Create an Ontology that is Compatible with GoodRelations Vocabulary</h3>
 
 For creating a GoodRelations-compliant ontology using IRIS plug-in, user selects the individuals and properties that will reside in the ontology. Then she clicks the “Use GoodRelations Vocabulary” button and “Use GoodRelations Vocabulary” wizard appears. She selects the corresponding GoodRelations property type and respective unit of measurement for each selected property. 
 
-<h3> Create a Custom Ontology from Scratch</h3>
+<h3>3.2. Create a Custom Ontology from Scratch</h3>
 In order to create a custom ontology, user selects the individuals and properties that will reside in the ontology. Then she clicks the “Set types/units for properties” button and “Set types/Units for properties” wizard appears. User specifies whether the property is OWLObjectProperty. Otherwise the property is defined as OWLDatatypeProperty. This version of the tool does not support units in custom ontologies. Therefore, if there is a unit value in the imported data, user chooses the “Remove Unit” field.
  
-<h2>Save and Serialize the Ontology</h2>
+<h2>4. Save and Serialize the Ontology</h2>
 The user clicks the “Save” button and saves the ontology in an owl file. Then she clicks the “Export to a serialization format” button and views the ontology in one of the structured data markup standards.
 
 
