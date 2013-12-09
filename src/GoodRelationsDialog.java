@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.net.URL;
 import java.util.*;
 
 import javax.swing.ImageIcon;
@@ -42,12 +43,16 @@ public class GoodRelationsDialog extends JDialog implements ActionListener {
 	ArrayList<UnitofMeasurement> unitsOfMeasurement;
 	ArrayList<String> unitsList;
 	int s1,s2; 
+	ImageIcon img1, img2,img3;
 	
-	public GoodRelationsDialog(ArrayList<String> slots, ArrayList<String> GRslots, ArrayList<UnitofMeasurement> unitsOfMeasurement,ModalityType mtype) {
+	public GoodRelationsDialog(ArrayList<String> slots, ArrayList<String> GRslots, ArrayList<UnitofMeasurement> unitsOfMeasurement,ModalityType mtype, ImageIcon img1, ImageIcon img2, ImageIcon img3) {
 		this.setModalityType(mtype);
 		this.slots=slots;
 		this.GRslots=GRslots;
 		this.unitsOfMeasurement=unitsOfMeasurement;
+		this.img1=img1;
+		this.img2=img2;
+		this.img3=img3;
 		initComponents();    
 	}
 
@@ -63,7 +68,12 @@ public class GoodRelationsDialog extends JDialog implements ActionListener {
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
 		setTitle("Use Good Relations Vocabulary");
-		setIconImage(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\GR_16_16_32.gif").getImage());
+		System.out.println("ABC4");
+		//URL fileUri = GoodRelationsDialog.class.getResource("/resources/GR_16_16_32.gif");
+		
+		//setIconImage(new ImageIcon(fileUri).getImage());
+		
+		setIconImage(img1.getImage());
 		//======== scrollPane1 ========
 		{
 			scrollPane1.setPreferredSize(new Dimension(550, 427));
@@ -74,7 +84,9 @@ public class GoodRelationsDialog extends JDialog implements ActionListener {
 			{
 				rowData[i][0]=slots.get(i);
 				rowData[i][1]="\u228A gr:datatypeProductOrServiceProperty";
+				System.out.println("ABC5.1");
 				rowData[i][2]=unitsOfMeasurement.get(0).symbol;
+				System.out.println("ABC5.2");
 			}
 			
 			combo[0]="\u228A gr:datatypeProductOrServiceProperty";
@@ -117,7 +129,8 @@ public class GoodRelationsDialog extends JDialog implements ActionListener {
 
 			//---- button1 ----
 			button1.setText("Cancel");
-			button1.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\cancel.gif"));
+			//fileUri = GoodRelationsDialog.class.getResource("/resources/cancel.gif");
+			button1.setIcon(img2);
 			button1.setPreferredSize(new Dimension(100, 23));
 			button1.setMaximumSize(new Dimension(100, 23));
 			button1.setMinimumSize(new Dimension(100, 23));
@@ -125,7 +138,8 @@ public class GoodRelationsDialog extends JDialog implements ActionListener {
 
 			//---- button2 ----
 			button2.setText("OK");
-			button2.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\yes.gif"));
+			//fileUri = GoodRelationsDialog.class.getResource("/resources/yes.gif");
+			button2.setIcon(img3);
 			button2.setPreferredSize(new Dimension(100, 23));
 			button2.setMaximumSize(new Dimension(100, 23));
 			button2.setMinimumSize(new Dimension(100, 23));

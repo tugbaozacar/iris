@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -79,7 +80,8 @@ public class SetPropertyPreferences extends JDialog implements ActionListener{
 				button1.setMaximumSize(new Dimension(100, 21));
 				button1.setMinimumSize(new Dimension(100, 21));
 				button1.setPreferredSize(new Dimension(100, 21));
-				button1.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\cancel.gif"));
+				URL fileUri = SetPropertyPreferences.class.getResource("/resources/cancel.gif");
+				button1.setIcon(new ImageIcon(fileUri));
 				button1.addActionListener(this);
 				toolBar1.add(button1);
 
@@ -88,7 +90,8 @@ public class SetPropertyPreferences extends JDialog implements ActionListener{
 				button2.setPreferredSize(new Dimension(100, 21));
 				button2.setMaximumSize(new Dimension(100, 21));
 				button2.setMinimumSize(new Dimension(100, 21));
-				button2.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\yes.gif"));
+				fileUri = SetPropertyPreferences.class.getResource("/resources/yes.gif");
+				button2.setIcon(new ImageIcon(fileUri));
 				button2.addActionListener(this);
 				toolBar1.add(button2);
 			}
@@ -154,7 +157,8 @@ public class SetPropertyPreferences extends JDialog implements ActionListener{
 		      }
 		    });
 		scrollPane1.setViewportView(table1);
-		setIconImage(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Default\\PropertyMatrix.gif").getImage());
+		URL fileUri = SetPropertyPreferences.class.getResource("/resources/PropertyMatrix.gif");
+		setIconImage(new ImageIcon(fileUri).getImage());
 		setSize(600,400);
 	}
 	

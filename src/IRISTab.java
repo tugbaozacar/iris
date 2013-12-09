@@ -26,6 +26,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
@@ -37,6 +38,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreePath;
 
 import edu.stanford.smi.protege.exception.OntologyLoadException;
+import edu.stanford.smi.protege.model.Project;
 import edu.stanford.smi.protege.ui.ProjectManager;
 import edu.stanford.smi.protege.ui.ProjectView;
 import edu.stanford.smi.protege.widget.AbstractTabWidget;
@@ -119,7 +121,9 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 		BorderLayout border=new BorderLayout();
 		setLayout(border);
         setLabel("IRIS");
-        setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Project1.gif"));
+        
+        URL fileUri = IRISTab.class.getResource("/resources/Project1.gif");
+        setIcon(new ImageIcon(fileUri));
         this.setSize(300,150);
         owlModel=(JenaOWLModel) getProject().getKnowledgeBase();
         
@@ -159,6 +163,7 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	 		setPropertyPreferences=new JButton();
 	 		goodRelations=new JButton();
 	 		
+	 		
 //	 		menuItem = new JMenuItem("Export to a serialization format");
 //	 		menuItem.setOpaque(false);
 //	 		//menuItem.setIcon();
@@ -184,17 +189,20 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	 				{
 
 	 					//---- button16 ----
-	 					button16.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Default\\SubClass.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/SubClass.gif");
+	 					button16.setIcon(new ImageIcon(fileUri));
 	 					button16.setToolTipText("Create subclass");
 	 					toolBar1.add(button16);
 
 	 					//---- button17 ----
-	 					button17.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Default\\SiblingClass.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/SiblingClass.gif");
+	 					button17.setIcon(new ImageIcon(fileUri));
 	 					button17.setToolTipText("Create sibling class");
 	 					toolBar1.add(button17);
 
 	 					//---- button18 ----
-	 					button18.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\Project8.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/Project8.gif");
+	 					button18.setIcon(new ImageIcon(fileUri));
 	 					button18.setToolTipText("Remove class");
 	 					toolBar1.add(button18);
 	 				}
@@ -214,7 +222,8 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	 				{
 
 	 					//---- button24 ----
-	 					openButton.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\jlfgr-1_0\\toolbarButtonGraphics\\general\\Open16.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/Open16.gif");
+	 					openButton.setIcon(new ImageIcon(fileUri));
 	 					openButton.addActionListener(this);
 	 					toolBar2.add(openButton);
 
@@ -229,22 +238,26 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	 					//toolBar2.add(button20);
 	 					toolBar2.addSeparator();
 	 					//---- button21 ----
-	 					button21.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\jlfgr-1_0\\toolbarButtonGraphics\\general\\Properties16.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/Properties16.gif");
+	 					button21.setIcon(new ImageIcon(fileUri));
 	 					button21.setToolTipText("Select all");
 	 					toolBar2.add(button21);
 
 	 					//---- button22 ----
-	 					button22.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\jlfgr-1_0\\toolbarButtonGraphics\\general\\New16.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/New16.gif");
+	 					button22.setIcon(new ImageIcon(fileUri));
 	 					button22.setToolTipText("Deselect all");
 	 					toolBar2.add(button22);
 	 					toolBar2.addSeparator();
 	 					
-	 					setPropertyPreferences.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Default\\PropertyMatrix.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/PropertyMatrix.gif");
+	 					setPropertyPreferences.setIcon(new ImageIcon(fileUri));
 	 					setPropertyPreferences.addActionListener(this);
 	 					setPropertyPreferences.setToolTipText("Set type/units for property");
 	 					toolBar2.add(setPropertyPreferences);
 	 					
-	 					goodRelations.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\protege\\edu\\stanford\\smi\\protege\\resource\\image\\GR_16_16_32.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/GR_16_16_32.gif");
+	 					goodRelations.setIcon(new ImageIcon(fileUri));
 	 					goodRelations.addActionListener(this);
 	 					goodRelations.setToolTipText("Use Good Relations Vocabulary");
 	 					toolBar2.add(goodRelations);
@@ -252,12 +265,14 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	 					
 	 					
 	 					//---- button23 ----
-	 					sourceCodeButton.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Default\\SourceCode.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/SourceCode.gif");
+	 					sourceCodeButton.setIcon(new ImageIcon(fileUri));
 	 					sourceCodeButton.addActionListener(this);
 	 					sourceCodeButton.setToolTipText("Export to a serialization format");
 	 					toolBar2.add(sourceCodeButton);
 	 					
-	 					saveButton.setIcon(new ImageIcon("..\\icons\\Save16.gif"));
+	 					fileUri = IRISTab.class.getResource("/resources/Save16.gif");
+	 					saveButton.setIcon(new ImageIcon(fileUri));
 	 					saveButton.addActionListener(this);
 	 					saveButton.setToolTipText("Save");
 	 					toolBar2.add(saveButton);
@@ -271,7 +286,7 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	 			}
 	 			splitPane9.setRightComponent(splitPane11);
 	 		}
-	 		add(splitPane9, BorderLayout.CENTER);	
+	 		add(splitPane9, BorderLayout.CENTER); 
 	 		um_manager=new UnitsofMeasurementManager();
 	  }
 
@@ -314,10 +329,12 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	                	
 	            }
 			};
+			
+			URL fileUri = IRISTab.class.getResource("/resources/RDFPropertyInherited.gif");
 			DefaultTreeCellRenderer renderer = (DefaultTreeCellRenderer)  checkBoxTree_properties.getActualCellRenderer();
-	 		renderer.setClosedIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Multicolored\\RDFPropertyInherited.gif"));
-	 		renderer.setOpenIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Multicolored\\RDFPropertyInherited.gif"));
-	 		renderer.setLeafIcon(new ImageIcon("C:\\Users\\user\\Desktop\\icons\\Multicolored\\RDFPropertyInherited.gif"));
+	 		renderer.setClosedIcon(new ImageIcon(fileUri));
+	 		renderer.setOpenIcon(new ImageIcon(fileUri));
+	 		renderer.setLeafIcon(new ImageIcon(fileUri));
 	 		checkBoxTree_properties.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
 		
 //				@Override
@@ -476,9 +493,11 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	        			//e1.printStackTrace();
 	        		}
 	        	}
-	        	
+	        	System.out.println("GRD1");
 	        	getSelectionData();
+	        	System.out.println("GRD2");
 	        	getGRDMatchings();
+	        	System.out.println("GRD3");
 	        	saveOntology(null);
 	        	setPropertyPreferences.setEnabled(false);
 	        	goodRelations.setEnabled(false);
@@ -505,11 +524,13 @@ public class IRISTab extends AbstractTabWidget implements Listener{
 	  	public void getGRDMatchings()
 	  	{
         	Collection<DefaultRDFProperty> absProperties=owlModel.getRDFProperties();
+        	System.out.println("ABC1");
         	if (!absProperties.isEmpty())
         	{
         		final Iterator<DefaultRDFProperty> iterator= absProperties.iterator();
         		while(iterator.hasNext()) 
         		{
+        			System.out.println("ABC2");
         			DefaultRDFProperty absProperty = iterator.next();
         	         //System.out.println(absProperty.getNamespace());
         	         if (absProperty.getNamespace().contains("http://purl.org/goodrelations/v1#")||absProperty.getNamespace().contains("http://schema.org")||absProperty.getNamespace().contains("http://xmlns.com/foaf/0.1/"))
@@ -518,18 +539,25 @@ public class IRISTab extends AbstractTabWidget implements Listener{
         	         }
         	    }
         	}
+        	System.out.println("ABC3");
+        	URL fileUri1 = GoodRelationsDialog.class.getResource("/resources/GR_16_16_32.gif");
+        	URL fileUri2= GoodRelationsDialog.class.getResource("/resources/cancel.gif");
+        	URL fileUri3 = GoodRelationsDialog.class.getResource("/resources/yes.gif");
         	
-        	GoodRelationsDialog grd=new GoodRelationsDialog(slots,Grslots,um_manager.getUnitsofMeasurement(),ModalityType.APPLICATION_MODAL);
+        	GoodRelationsDialog grd=new GoodRelationsDialog(slots,Grslots,um_manager.getUnitsofMeasurement(),ModalityType.APPLICATION_MODAL, new ImageIcon(fileUri1), new ImageIcon(fileUri2),new ImageIcon(fileUri3));
         	grd.setVisible(true);
         	GoodRelationsMatchingResults=grd.getMatchingResults();
 	  	}
 	  	
 	  	public void openGoodRelationsVocabulary() throws OntologyLoadException{
 	  			  		
-	  		 InputStream is;
+	  		 InputStream is=null;
 	  		 ImportHelper imh=new ImportHelper(owlModel);
 	  	    try {
-	  	        is = new FileInputStream("C:\\Users\\user\\Desktop\\GoodRelations_v1.owl");
+	  	    	//URL fileUri = IRISTab.class.getResourceAsStream("/resources/GoodRelations_v1.owl");
+	  	    	
+				is =  IRISTab.class.getResourceAsStream("/resources/GoodRelations_v1.owl");
+				
 	  	        imh.addImport(is);
 	  	        imh.importOntologies(false);
 	  	        owlModel.getNamespaceManager().setPrefix("http://purl.org/goodrelations/v1#", "gr");
