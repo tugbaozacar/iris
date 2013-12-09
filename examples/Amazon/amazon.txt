@@ -1,0 +1,23 @@
+SELECT=(div), ATTR=(id), VALUE= (result_)
+[
+SELECT=(span), ATTR=(class), VALUE=(lrg bold), GETMETHOD=(asText), AS=(product.title);
+SELECT=(img), ATTR=(src), GETMETHOD=(Src), AS=(product.imgLink);
+SELECT=(h3), ATTR=(class),  VALUE= (newaps)
+[
+
+
+SELECT=(a), ATTR=(href),  GETMETHOD=(href)
+[
+SELECT=(div), ATTR=(id),  VALUE=(prodDetails)
+[
+SELECT=(td), ATTR=(class), VALUE=(label), GETMETHOD=(asText),  AS=(product.propertyName);
+SELECT=(td), ATTR=(class), VALUE=(value), GETMETHOD=(asText),  AS=(product.propertyValue)
+]
+]
+]
+]
+NEXT_PAGE:{SELECT=(a) , ATTR=(id) , VALUE=(pagnNextLink), GETMETHOD=(href)}
+PAGE_RANGE:{1-3}
+BASE_URI:{http://www.amazon.com}
+PAGE_URI:{http://www.amazon.com/s/ref=sr_nr_n_1?rh=n%3A565108%2Ck%3Alaptop&keywords=laptop&ie=UTF8&qid=1374832151&rnid=2941120011}
+CLASS:{Laptop}

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:gr="http://purl.org/goodrelations/v1#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns="http://www.owl-ontologies.com/Ontology1372772628.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1372772628.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://purl.org/goodrelations/v1"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ValuesFor_brandName">
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Laptop"/>
+  <owl:ObjectProperty rdf:ID="brandName">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <rdfs:domain rdf:resource="#Laptop"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/goodrelations/v1#QualitativeValue"/>
+          <owl:Class rdf:about="#ValuesFor_brandName"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hardDrive">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+          <rdf:Description rdf:about="http://purl.org/goodrelations/v1#QuantitativeValueFloat"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Laptop"/>
+  </owl:ObjectProperty>
+  <Laptop rdf:ID="Product_0">
+    <gr:color>black</gr:color>
+    <hardDrive>
+      <gr:QuantitativeValueFloat rdf:ID="QuantitativeValue_0">
+        <gr:hasValueFloat rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >500.0</gr:hasValueFloat>
+        <gr:hasUnitOfMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >E57</gr:hasUnitOfMeasurement>
+      </gr:QuantitativeValueFloat>
+    </hardDrive>
+    <brandName>
+      <ValuesFor_brandName rdf:ID="toshiba"/>
+    </brandName>
+  </Laptop>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#color">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/goodrelations/v1#ProductOrService"/>
+          <rdf:Description rdf:about="http://schema.org/Product"/>
+          <owl:Class rdf:about="#Laptop"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
